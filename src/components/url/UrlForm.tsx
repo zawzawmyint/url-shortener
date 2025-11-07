@@ -90,6 +90,7 @@ export default function UrlForm() {
           <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
             <FormDescription style={{ textDecoration: "underline" }}>
               <Link href={shortUrl} target="_blank" rel="noopener noreferrer">
+                {process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/
                 {shortUrl}
               </Link>
             </FormDescription>

@@ -4,7 +4,11 @@ import { Button } from "./GenericStyles";
 const CopyButton = ({ shortCode }: { shortCode: string }) => {
   const [copied, setCopied] = useState(false);
   const handleCopy = (shortCode: string) => {
-    navigator.clipboard.writeText(shortCode);
+    navigator.clipboard.writeText(
+      (process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000") +
+        "/" +
+        shortCode
+    );
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

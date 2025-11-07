@@ -47,9 +47,7 @@ export async function POST(request: NextRequest) {
     // Return the new shortened URL record
     return NextResponse.json({
       createdAt: shortened.createdAt,
-      shortUrl: `${
-        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-      }/${shortened.shortCode}`,
+      shortUrl: `${shortened.shortCode}`,
     });
   } catch (error) {
     return NextResponse.json(
