@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 function generateShortCode() {
@@ -39,6 +40,9 @@ export async function POST(request: NextRequest) {
         shortCode,
       },
     });
+
+    // Revalidate the home page
+    revalidatePath("/");
 
     // Return the new shortened URL record
     return NextResponse.json({
