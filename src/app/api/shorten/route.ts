@@ -22,9 +22,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           createdAt: existingUrl.createdAt,
-          shortUrl: `${
-            process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-          }/${existingUrl.shortCode}`,
+          shortUrl: `${existingUrl.shortCode}`,
         },
         { status: 200 }
       );

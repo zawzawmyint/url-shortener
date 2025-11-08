@@ -31,11 +31,7 @@ This repository contains a complete URL shortening service that allows users to 
 
 DATABASE_URL="file:./dev.db" # For PostgreSQL
 
-# DATABASE_URL="\*\*\*" # For PostgreSQL
-
-# Optional: Custom domain for short URLs
-
-NEXT_PUBLIC_DOMAIN="http://localhost:3000"
+NEXT_PUBLIC_BASE_URL="http://localhost:3000"
 
 ### Installation
 

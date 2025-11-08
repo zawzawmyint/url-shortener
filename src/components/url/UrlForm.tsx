@@ -17,6 +17,7 @@ import Link from "next/link";
 import CopyButton from "@/components/generic/CopyButton";
 import UrlFormRenderArea from "./UrlFormRenderArea";
 import Alert from "../generic/AlertStyled";
+import { wait } from "@/lib/helper";
 
 export default function UrlForm() {
   const [url, setUrl] = useState("");
@@ -40,6 +41,7 @@ export default function UrlForm() {
     e.preventDefault();
     setLoading(true);
     try {
+      await wait(2000);
       const data = await createShortenUrl(url);
       setShortUrl(data.shortUrl);
       setCreatedAt(data.createdAt);

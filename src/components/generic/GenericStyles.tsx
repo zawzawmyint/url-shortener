@@ -1,3 +1,4 @@
+"use client";
 import styled from "@emotion/styled";
 
 const Btn = styled.button`
@@ -19,7 +20,7 @@ const Inputt = styled.input`
   padding: 10px;
   border: 0px solid hotpink;
   border-radius: 10px;
-  background-color: rgba(235, 235, 235, 1);
+  background-color: rgba(235, 235, 235, 0.7);
   color: #333;
   font-size: 14px;
   line-height: 1.5;
@@ -42,6 +43,23 @@ const Section = styled.section`
 `;
 
 /// Components
+
+// create loading span with small bouncing effect
+export const LoadingSpan = styled.span`
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
 
 export const Button = ({
   style,

@@ -1,5 +1,11 @@
 import React from "react";
-import { Button, Input, InputName } from "../generic/GenericStyles";
+import {
+  Button,
+  Input,
+  InputName,
+  LoadingSpan,
+} from "../generic/GenericStyles";
+import { BounceDiv } from "./UrlFormStyleds";
 
 const UrlFormRenderArea = ({
   loading,
@@ -29,7 +35,13 @@ const UrlFormRenderArea = ({
           backgroundColor: "rgba(0, 0, 0, 1)",
         }}
       >
-        {loading ? "Shortening..." : "Shorten"}
+        {loading ? (
+          <BounceDiv>
+            <LoadingSpan />
+          </BounceDiv>
+        ) : (
+          "Shorten"
+        )}
       </Button>{" "}
     </div>
   );

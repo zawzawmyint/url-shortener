@@ -136,7 +136,7 @@ const UrlItem = ({
             textOverflow: "ellipsis",
           }}
         >
-          <Link href={`/${item.shortCode}`} target="_blank">
+          <Link href={`${item.longUrl}`} target="_blank">
             {item.longUrl}
           </Link>
         </FormTitle>
